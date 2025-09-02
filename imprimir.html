@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Imprimir Paciente</title>
+  <link rel="stylesheet" href="estilosimprim.css">
+</head>
+<body>
+  <div class="form-container">
+    <h2>Ficha del Paciente</h2>
+    <p><strong>Nombre:</strong> <span id="impNombre"></span></p>
+    <p><strong>Fecha de nacimiento:</strong> <span id="impFecha"></span></p>
+    <p><strong>Sexo:</strong> <span id="impSexo"></span></p>
+    <p><strong>Tipo de sangre:</strong> <span id="impSangre"></span></p>
+    <p><strong>Peso:</strong> <span id="impPeso"></span> kg</p>
+
+  <button class="no-print" onclick="window.print()">🖨️ Imprimir</button>
+<button class="no-print" onclick="window.location.href='pacientes.html'">🏠 Salir</button>
+
+  </div>
+
+  <script>
+    // Mostrar solo los datos del paciente
+    document.getElementById("impNombre").textContent = localStorage.getItem("nombre");
+    document.getElementById("impFecha").textContent = localStorage.getItem("fecha");
+    document.getElementById("impSexo").textContent = localStorage.getItem("sexo");
+    document.getElementById("impSangre").textContent = localStorage.getItem("sangre");
+    document.getElementById("impPeso").textContent = localStorage.getItem("peso");
+  </script>
+</body>
+</html>

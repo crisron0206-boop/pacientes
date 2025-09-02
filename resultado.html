@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Datos del Paciente</title>
+  <link rel="stylesheet" href="estilosresul.css">
+</head>
+<body>
+  <div class="form-container">
+    <h2>Datos Guardados</h2>
+    <ul>
+      <li><strong>Nombre (String):</strong> <span id="resNombre"></span></li>
+      <li><strong>Fecha de nacimiento (Date):</strong> <span id="resFecha"></span></li>
+      <li><strong>Sexo (String):</strong> <span id="resSexo"></span></li>
+      <li><strong>Tipo de sangre (String):</strong> <span id="resSangre"></span></li>
+      <li><strong>Peso (double):</strong> <span id="resPeso"></span></li>
+    </ul>
+
+    <button onclick="irImprimir()">Imprimir</button>
+  </div>
+
+  <script>
+    // Recuperar datos de localStorage
+    document.getElementById("resNombre").textContent = localStorage.getItem("nombre");
+    document.getElementById("resFecha").textContent = localStorage.getItem("fecha");
+    document.getElementById("resSexo").textContent = localStorage.getItem("sexo");
+    document.getElementById("resSangre").textContent = localStorage.getItem("sangre");
+    document.getElementById("resPeso").textContent = localStorage.getItem("peso");
+    function irImprimir() {
+  window.open("imprimir.html", "_blank");
+}
+  </script>
+</body>
+</html>
